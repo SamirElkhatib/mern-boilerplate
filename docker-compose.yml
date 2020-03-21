@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  client:
+    container_name: client
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/client
+
+  server:
+    container_name: server
+    build:
+      context: ./server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/server
